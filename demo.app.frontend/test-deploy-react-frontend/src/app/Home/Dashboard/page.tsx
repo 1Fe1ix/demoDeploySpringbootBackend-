@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { Box, Typography } from '@mui/material'
-import { fetchPosts } from '@/app/api/axios/route'
+import { fetchPosts } from '@/lib/api/axios/route'
 
 function App() {
   const [data, setData] = useState<string>('Lade...')
