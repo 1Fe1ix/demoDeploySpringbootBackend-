@@ -14,4 +14,24 @@ public class TestAppController {
     public String testApi(){
         return "Hello, World!";
     }
+
+    @GetMapping("/mami")
+    public String testApi2(){
+        return "Mami, ich hab dich lieb";
+    }
+
+    @GetMapping("/dani")
+    public String testApi3(){
+        return "My love, te extraño mucho y te amo con todo mi corazón";
+    }
+
+    @GetMapping("/kimi")
+    public String testApi4(){
+        return "Kimi, ich hab dich lieb";
+    }
+
+    @GetMapping("/papi")
+    public String testApi5(){
+        return "Papi, ich hab dich lieb";
+    }
 }
