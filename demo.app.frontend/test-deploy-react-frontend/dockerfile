@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # 8. Exponiere Port 3000 für React App
-EXPOSE 3000
+#EXPOSE 3000
 
 # 7. Baue die App beim Container-Start
 CMD ["sh", "-c", "npm run build && npm start"]
