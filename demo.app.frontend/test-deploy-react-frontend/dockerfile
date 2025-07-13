@@ -1,12 +1,17 @@
-# ./frontend/Dockerfile
-FROM node:20 AS build
+# 1. Minimal-Image mit Node 22 auf Alpine-Basis
+FROM node:22
 
+# 2. Arbeitsverzeichnis im Container
 WORKDIR /app
+
+# 4. Kopiere nur package.json und lockfile für schnelleren Cache
 COPY package*.json ./
+
+# 5. Installiere Abhängigkeiten (prod + dev)
 RUN npm install
+
+# 6. Kopiere restlichen Code (src, public, etc.)
 COPY . .
-EXPOSE 3000
-CMD ["npm", "run", "build"]
 
-
-
+# 7. Baue die App beim Container-Start
+CMD ["sh", "-c", "npm run build && npm start"]
